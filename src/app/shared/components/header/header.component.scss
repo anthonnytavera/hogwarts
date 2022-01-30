@@ -1,0 +1,28 @@
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+  .navbar-brand {
+    span {
+      font-weight: 700;
+    }
+  }
+  .container-menu {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+
+    .items-menu {
+      position: absolute;
+      right: 0;
+      top: 38px;
+
+      ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+      }
+    }
+  }
+}

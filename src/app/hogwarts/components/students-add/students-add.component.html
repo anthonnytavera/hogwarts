@@ -1,0 +1,71 @@
+<div class="container">
+  <h1>New student</h1>
+  <form [formGroup]="studentForm" class="mt-5">
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input
+        type="text"
+        class="form-control"
+        id="name"
+        placeholder="Name"
+        formControlName="name"
+      />
+      <small
+        class="form-text text-danger"
+        *ngIf="submitted && !studentForm.get('name')?.valid"
+        >Error field</small
+      >
+    </div>
+    <div class="form-group">
+      <label for="patronus">Patronus</label>
+      <input
+        type="text"
+        class="form-control"
+        id="patronus"
+        placeholder="Patronus"
+        formControlName="patronus"
+      />
+    </div>
+    <div class="form-group">
+      <label for="yearOfBirth">Year of birth</label>
+      <input
+        type="number"
+        class="form-control"
+        id="yearOfBirth"
+        min="1900"
+        max="2022"
+        placeholder="Year of birth"
+        formControlName="yearOfBirth"
+      />
+      <small
+        class="form-text text-danger"
+        *ngIf="submitted && !studentForm.get('yearOfBirth')?.valid"
+        >Error field</small
+      >
+    </div>
+    <div class="form-group">
+      <label for="house">House</label>
+      <select class="form-control" id="house" formControlName="house">
+        <option [value]="'slytherin'">Slytherin</option>
+        <option [value]="'gryffindor'">Gryffindor</option>
+        <option [value]="'ravenclaw'">Ravenclaw</option>
+        <option [value]="'hufflepuff'">Hufflepuff</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="image">Image</label>
+      <input
+        type="file"
+        class="form-control-file"
+        id="image"
+        formControlName="image"
+        (change)="onFileChange($event)"
+      />
+    </div>
+
+    <button type="submit" (click)="onSubmit()" class="btn btn-secondary">
+      Submit
+    </button>
+  </form>
+</div>

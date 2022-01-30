@@ -1,0 +1,21 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* Importing Bootstrap SCSS file. */
+@import "~bootstrap/scss/bootstrap";
+body {
+  width: 100%;
+  height: 100%;
+}
+
+.page-item.active .page-link {
+  background-color: #6c757d;
+  border-color: #6c757d;
+}
+
+.page-link {
+  color: #6c757d;
+}
+
+.page-link:focus {
+  box-shadow: none;
+}

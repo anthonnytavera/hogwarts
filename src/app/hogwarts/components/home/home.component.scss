@@ -1,0 +1,26 @@
+.container {
+  .sections {
+    .section {
+      border-radius: 5px;
+      height: 100px;
+      color: #fff;
+      font-weight: 700;
+      text-align: center;
+      background: #6c757d;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 2px solid #000;
+    }
+
+    .section:hover {
+      cursor: pointer;
+    }
+  }
+
+  .image {
+    img {
+      width: 100%;
+    }
+  }
+}

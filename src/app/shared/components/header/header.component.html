@@ -1,0 +1,57 @@
+<!-- Image and text -->
+<nav class="header navbar navbar-light bg-light mb-5">
+  <a
+    class="navbar-brand d-flex align-items-center"
+    [routerLink]="['/hogwarts']"
+  >
+    <img
+      src="../assets/images/logo.png"
+      width="80"
+      height="80"
+      class="d-inline-block align-top"
+      alt=""
+    />
+    <span class="ml-2">Hogwarts</span>
+  </a>
+  <div class="container-menu">
+    <button
+      type="button"
+      class="btn btn-outline-secondary"
+      (click)="collapse.toggle()"
+      [attr.aria-expanded]="!isCollapsed"
+      aria-controls="collapseExample"
+    >
+      Menu
+    </button>
+    <div
+      class="items-menu"
+      #collapse="ngbCollapse"
+      [(ngbCollapse)]="isCollapsed"
+    >
+      <div class="card">
+        <div class="card-body">
+          <ul>
+            <li>
+              <a class="text-secondary" [routerLink]="['/hogwarts']">Home</a>
+            </li>
+            <li>
+              <a class="text-secondary" [routerLink]="['/hogwarts/characters']"
+                >Characters</a
+              >
+            </li>
+            <li>
+              <a class="text-secondary" [routerLink]="['/hogwarts/students']"
+                >Students</a
+              >
+            </li>
+            <li>
+              <a class="text-secondary" [routerLink]="['/hogwarts/teachers']"
+                >Teachers</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>

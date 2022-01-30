@@ -1,0 +1,13 @@
+<div class="container" *ngIf="students.length > 0">
+  <div class="mb-5 d-flex justify-content-between">
+    <h1>Students:</h1>
+    <button
+      type="button"
+      class="btn btn-dark"
+      [routerLink]="['/hogwarts/students/add']"
+    >
+      Add
+    </button>
+  </div>
+  <app-table [arrItems]="students" [columns]="columns"></app-table>
+</div>

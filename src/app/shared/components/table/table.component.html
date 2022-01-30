@@ -1,0 +1,76 @@
+<form [formGroup]="searchForm">
+  <div class="form-group form-inline">
+    Search:
+    <input class="form-control ml-2" type="text" formControlName="text" />
+  </div>
+</form>
+
+<div class="container-table">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th
+          *ngFor="let column of columns"
+          scope="col"
+          [attr.sortable]="column.sortable ? column.name : null"
+          [class]="column.sortable && sort == column.name ? direction : null"
+          (click)="column.sortable ? onSort(column.name) : null"
+        >
+          {{ column.title }}
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of items">
+        <td *ngFor="let column of columns">
+          <ng-container *ngIf="column.type == 'image'">
+            <img
+              [src]="
+                item[column.name] !== ''
+                  ? item[column.name]
+                  : '../assets/images/image-not-avaible.png'
+              "
+            />
+          </ng-container>
+
+          <ng-container
+            *ngIf="column.type == 'string' || column.type == 'number'"
+          >
+            {{
+              column.type == "number" &&
+              column.name == "age" &&
+              item[column.name] == 0
+                ? "Not Data"
+                : item[column.name] == ""
+                ? "Not Data"
+                : item[column.name]
+            }}
+          </ng-container>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="d-flex justify-content-between flex-wrap p-2 mb-5">
+  <ngb-pagination
+    [collectionSize]="collectionSize"
+    [(page)]="page"
+    [pageSize]="pageSize"
+    (pageChange)="refreshItems()"
+    [maxSize]="2"
+    [boundaryLinks]="true"
+  >
+  </ngb-pagination>
+
+  <select
+    class="custom-select"
+    style="width: auto"
+    [(ngModel)]="pageSize"
+    (ngModelChange)="refreshItems()"
+  >
+    <option [ngValue]="10">10 items per page</option>
+    <option [ngValue]="20">20 items per page</option>
+    <option [ngValue]="30">30 items per page</option>
+  </select>
+</div>

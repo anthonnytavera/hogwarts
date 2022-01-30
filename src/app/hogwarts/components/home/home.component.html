@@ -1,0 +1,22 @@
+<div class="container">
+  <h1 class="title">Welcome to Hogwarts</h1>
+  <p class="description">Select the option that you preferences</p>
+  <div class="row sections">
+    <div class="col-lg-4 section" [routerLink]="['/hogwarts/characters']">
+      <span>Characters</span>
+    </div>
+    <div class="col-lg-4 section" [routerLink]="['/hogwarts/students']">
+      <span>Students</span>
+    </div>
+    <div class="col-lg-4 section" [routerLink]="['/hogwarts/teachers']">
+      <span>Teachers</span>
+    </div>
+  </div>
+  <div class="row image">
+    <div class="col-12">
+      <img src="../assets/images/hogwarts.png" alt="Hogwarts" />
+    </div>
+  </div>
+
+  <audio src="../assets/sound/song.mp3" autoplay loop></audio>
+</div>

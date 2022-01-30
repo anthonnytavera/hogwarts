@@ -1,0 +1,13 @@
+<div class="container" *ngIf="characters.length > 0">
+  <h1>Characters:</h1>
+  <select class="custom-select mb-3 mt-3" (change)="onChange($event)">
+    <option [value]="'slytherin'">Slytherin</option>
+    <option [value]="'gryffindor'">Gryffindor</option>
+    <option [value]="'ravenclaw'">Ravenclaw</option>
+    <option [value]="'hufflepuff'">Hufflepuff</option>
+  </select>
+  <div class="house-logo mb-3">
+    <img [src]="logo" alt="Logos Houses's Hogwarts" />
+  </div>
+  <app-table [arrItems]="characters" [columns]="columns"></app-table>
+</div>
