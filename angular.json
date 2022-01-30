@@ -6,7 +6,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "hogwarts-anthonny-tavera": {
+    "hogwarts": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -23,7 +23,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "docs",
+            "outputPath": "dist/hogwarts",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -70,10 +70,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "hogwarts-anthonny-tavera:build:production"
+              "browserTarget": "hogwarts:build:production"
             },
             "development": {
-              "browserTarget": "hogwarts-anthonny-tavera:build:development"
+              "browserTarget": "hogwarts:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -81,7 +81,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "hogwarts-anthonny-tavera:build"
+            "browserTarget": "hogwarts:build"
           }
         },
         "test": {
@@ -100,5 +100,5 @@
       }
     }
   },
-  "defaultProject": "hogwarts-anthonny-tavera"
+  "defaultProject": "hogwarts"
 }
